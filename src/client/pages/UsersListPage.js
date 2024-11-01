@@ -34,4 +34,7 @@ function loadData(store) {
 
 export { loadData };
 // 컴포넌트를 리덕스와 연동하려면 react-redux에서 제공하는 connect 함수를 사용헤야 한다.
-export default connect(mapStateToProps, { fetchUsers })(UsersList);
+export default {
+  loadData,
+  component: connect(mapStateToProps, { fetchUsers })(UsersList),
+};
